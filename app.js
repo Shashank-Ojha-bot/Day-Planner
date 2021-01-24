@@ -38,9 +38,17 @@ app.post("/",function(req,res){
     res.redirect("/work");
   }
   else{
+    let item_text=item.trim();
+    if(item_text!==''){
     items.push(item);
     res.redirect("/");             //redirecting to the home route to render all the tags 
   }
+  else
+  {
+    
+    res.redirect("/");
+  }
+}
 })
 
 app.listen(process.env.PORT || 3000,function(){
