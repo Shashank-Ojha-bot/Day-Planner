@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const date=require(__dirname + "/date.js");     //requiring the user defined module.date object bound to exports of date.js module
 
-console.log(date);
+
 var items=[];            //global scope & array to store a list of items
 var workItems=[];
 const app=express();
@@ -45,10 +45,15 @@ app.post("/",function(req,res){
   }
   else
   {
-    
     res.redirect("/");
   }
 }
+})
+app.post("/deleteItem", (req, res) => {
+  let item = req.body.button;
+  items.splice(items.indexOf(item), 1);
+
+  res.redirect("/");
 })
 
 app.listen(process.env.PORT || 3000,function(){
