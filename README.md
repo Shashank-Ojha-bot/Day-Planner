@@ -6,4 +6,6 @@
 
 *Used EJS for templating the web app*
 
+*Link to the website is given in the Description section*
+
 
